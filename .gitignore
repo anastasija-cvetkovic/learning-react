@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# ensure that every node_modules inside your projects will be ignored automatically
+*/node_modules/
