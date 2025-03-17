@@ -1,0 +1,53 @@
+
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0px;
+  font-family: "Inter",sans-serif !important;
+  background-color: #282D35;
+  color: white;
+}
+header{
+  height:90px;
+  background-color: #21222A;
+  padding: 30px 25px;
+}
+nav{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+nav > img {
+  width:30px;
+  margin-right: 7px;
+}
+nav > span {
+  color: #61DAFB;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+main{
+  padding: 60px 30px;
+  background-image: url(./assets/react-logo-half.png);
+  background-repeat: no-repeat;
+  background-position: right 65%;
+}
+main > h1{
+  margin: 0;
+  font-size: 2.4rem;
+}
+.facts-list{
+  margin-top: 46px;
+  max-width: 400px;
+}
+.facts-list > li{
+  padding-block: 10px; /* margin-block would collapse 10px in between il elements */
+  line-height:19px;
+}
+.facts-list > li::marker{ 
+  /*marker is a sudo selector that very specifically 
+  intended to add styles to bullet points in list items*/
+  color: #61DAFB;
+  font-size: 1.5rem;
+}
