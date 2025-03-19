@@ -5,6 +5,7 @@ header {
   align-items: center;
   color: white;
   height: 55px;
+  margin-bottom: 36px;
 }
 header > img {
   /*if we were to have multiple images
@@ -18,6 +19,7 @@ header > h1 {
 }
 article.journal-entry {
   display: flex;
+  margin-bottom: 36px;
 }
 
 article.journal-entry .marker {
