@@ -11,8 +11,7 @@ export default function Main() {
 		event.preventDefault();
 		const formData = new FormData(event.currentTarget);
 		const newIngredient = formData.get("ingredient");
-		setIngredients(newIngredient);
-		console.log(ingredients);
+		setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
 	}
 	return (
 		<main>
