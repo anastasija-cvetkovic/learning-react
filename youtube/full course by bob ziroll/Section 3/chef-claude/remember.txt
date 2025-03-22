@@ -1,0 +1,33 @@
+function handleSubmit(event){  **down is React 19 version
+  event.preventDefault(); 
+  const formEl = event.currentTarget
+  const formData = new formData(formEl)
+  const email = formData.get("email")
+  formEl.reset()
+}
+
+1) Default Action: By default, when a form is submitted, the browser sends the form data to the server and reloads or navigates away from the current page. This behavior is usually undesirable in modern web applications (especially single-page applications) where you want to handle the data submission asynchronously.
+When you are sending data asynchronously - Instead of letting the browser handle the form submission (which would reload the page), you cancel that default action with event.preventDefault(). Then you use the Fetch API to send the FormData to your server in the background. This allows your web page to stay interactive and update dynamically based on the server’s response without a full-page refresh 
+
+preventDefault(): Calling event.preventDefault() stops the browser from performing this default action. This means the page will not refresh or navigate away, giving you full control over what happens next (such as sending the data via AJAX).
+
+2) This property of the event object refers to the element on which the event listener is attached. In this case, it is assumed that the event listener was attached to a <form> element. Thus, formEl now holds a reference to the form that was submitted.
+
+Usage: Having a reference to the form allows you to access its elements and their values.
+
+REACT 19 version:
+function App(){
+  function signUp(formData){
+    const email = formData.get("email")
+    console.log(email)
+  }
+  return(
+    <section>
+      <h1> Signup form </h1>
+      <form action = {signUp}>
+        <label htmlFor="email">Email:</label>
+        <input id="email" (id is for htmlFor label property) type="email" placeholder="joe@shmoe.com" />
+        <br />
+      </form>
+  )
+}
