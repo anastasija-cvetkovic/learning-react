@@ -7,19 +7,23 @@ export default function Main() {
 		<li key={ingredient}>{ingredient}</li>
 	));
 
-	function handleSubmit(event) {
-		event.preventDefault();
-		const formData = new FormData(event.currentTarget);
-		const newIngredient = formData.get("ingredient");
-		setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+	function addIngredient(formData) {
+		//getAll with checkboxes when we want a possible array
+		// const newIngredient = formData.get("ingredient");
+		// setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+		//if we have a lot of entries in the form =>
+		Object.fromEntries(formData); //this doesn't work for arrays, you have to do that separaterly
 	}
+	// form submission used to be with onSubmit prop and the function used to receive event parameter
+	//this way forms maintain their own state (React 19)
 	return (
 		<main>
 			<form
 				className='add-ingredient-form'
-				onSubmit={handleSubmit}
+				action={addIngredient}
 			>
 				{/* aria-label is for someone using a screen reader */}
+				{/* defaultValue */}
 				<input
 					aria-label='Add ingredient'
 					type='text'
