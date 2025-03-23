@@ -1,0 +1,11 @@
+1. What is "conditional rendering"?
+  Conditional rendering is when we want to only somestimes display something on the page based on some kind of condition.
+
+2. When would you use &&?
+  It's good for when you want to either display something or NOT display something.
+
+3. When would you use a ternary?
+  When you need to decide which 2 things to display(although you can use nested ternaries to determine any number of things you want to display)
+
+4. What if you need to decide between > 2 options on what to display?
+  if...else if..else conditional can be used, or maybe a `switch` statement.

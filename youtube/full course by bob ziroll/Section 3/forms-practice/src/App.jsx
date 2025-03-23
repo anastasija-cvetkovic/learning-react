@@ -5,7 +5,14 @@ import "./App.css";
 
 function App() {
 	function signUp(formData) {
-		console.log(formData);
+		const data = Object.fromEntries(formData);
+		const dietaryRestrictions = formData.getAll("dietaryRestrictions");
+		//data.dietaryRestrictions = dietaryRestrictions
+		const allData = {
+			...data,
+			dietaryRestrictions,
+		};
+		console.log(allData);
 	}
 	return (
 		<section>
