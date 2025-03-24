@@ -1,10 +1,11 @@
 import { useState } from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
+import { getRecipeFromMistral } from "../ai";
 
 export default function Main() {
 	const [ingredients, setIngredients] = useState(["limes", "oregano"]);
-	const [recipeShown, setRecipeShown] = useState(false);
+	const [recipe, setRecipe] = useState(false);
 
 	const ingredientsListItems = ingredients.map((ingredient) => (
 		<li key={ingredient}>{ingredient}</li>
@@ -22,8 +23,9 @@ export default function Main() {
 	}
 	// form submission used to be with onSubmit prop and the function used to receive event parameter
 	//this way forms maintain their own state (React 19)
-	function toggleRecipeShown() {
-		setRecipeShown((prevShown) => !prevShown);
+	async function getRecipe() {
+		const recipeMarkdown = await getRecipeFromMistral(ingredients);
+		setRecipe(recipeMarkdown);
 	}
 	return (
 		<main>
@@ -43,8 +45,13 @@ export default function Main() {
 				<button type='submit'>Add ingredient</button>
 			</form>
 			{/* or ingredientsListItems.length>0 with && operator*/}
-			{ingredientsListItems.length ? <IngredientsList /> : null}
-			{recipeShown && <ClaudeRecipe />}
+			{ingredientsListItems.length ? (
+				<IngredientsList
+					ingredients={ingredients}
+					getRecipe={getRecipe}
+				/>
+			) : null}
+			{recipe && <ClaudeRecipe recipe={recipe} />}
 		</main>
 	);
 }
