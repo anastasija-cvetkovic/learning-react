@@ -1,0 +1,7 @@
+/* here we define classes that are scoped to our ProductCard component,
+that way we can define classes here without worrying about name clashing
+-> always use the camelCase notation(hyphens can't be used, they won't make a valid name for a Javascript property) */
+.cardContainer {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
