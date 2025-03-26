@@ -21,7 +21,7 @@ function orderPizza() {
 //Reducer
 const initialState = {
   pizzaBase: 100,
-  toppings: ["cheese", "pepperoni"],
+  burgerBase: 100,
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -41,6 +41,13 @@ const store = createStore(reducer);
 //2- It exposes a method called getState which gives your application access to the current state in the store.
 console.log("Initial State", store.getState());
 //3- Registers listeners via subscribe(listener)
-store.subscribe(() => console.log("Updated State", store.getState()));
+const unsubscribe = store.subscribe(() =>
+  console.log("Updated State", store.getState())
+);
 //4- Allows state to be updated via dispatch(action)
+store.dispatch(orderPizza());
+store.dispatch(orderPizza());
+store.dispatch(orderPizza());
+store.dispatch(orderPizza());
+unsubscribe();
 store.dispatch(orderPizza());
