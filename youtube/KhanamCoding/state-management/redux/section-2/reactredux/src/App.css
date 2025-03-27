@@ -18,15 +18,23 @@
   text-align: center;
 }
 .btn {
-  background-color: #28a745;
+  background-color: #70005d;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1em;
 }
+
 .btn:hover {
-  background-color: #218838;
+  background-color: #70005d;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
 }
