@@ -1,5 +1,11 @@
-import { createStore } from "redux";
-import pizzaReducer from "../features/Pizza/PizzaReducer";
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from "./rootReducer";
+import logger from "redux-logger";
 
-const store = createStore(pizzaReducer);
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__(applyMiddleware(logger))
+);
+
 export default store;

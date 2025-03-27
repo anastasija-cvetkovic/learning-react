@@ -1,12 +1,16 @@
 import "./App.css";
-import PizzaBox from "./features/Pizza/PizzaBox";
+// import HookContainer from "./features/pizza/HookContainer";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import BurgerBox from "./features/burger/BurgerBox";
+import PizzaBox from "./features/pizza/PizzaBox";
 
 function App() {
 	return (
 		<Provider store={store}>
 			<PizzaBox />
+			{/* <HookContainer /> */}
+			<BurgerBox />
 		</Provider>
 	);
 }

@@ -17,9 +17,10 @@ function PizzaBox(props) {
 	);
 }
 
+// this is done instead of using hooks
 const mapStateToProps = (state) => {
 	return {
-		pizzaBases: state.pizzaBases,
+		pizzaBases: state.pizza.pizzaBases,
 	};
 };
 const mapDispatchToProps = (dispatch) => {
@@ -29,3 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PizzaBox);
+//export default PizzaBox;
