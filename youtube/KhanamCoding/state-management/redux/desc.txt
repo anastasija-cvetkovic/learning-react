@@ -1,0 +1,2 @@
+full name:  Redux and Modern Redux Toolkit with Asynchronous Operation – Full Course 
+link: https://www.youtube.com/watch?v=SlC8941Wwrk

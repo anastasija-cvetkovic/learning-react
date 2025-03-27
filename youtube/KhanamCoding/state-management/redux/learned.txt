@@ -1,0 +1,7 @@
+-professional folder structure-
+1st way- 
+instead of creating components folder,
+create a features folder with individual folders for each feature,
+in the src folder create a store.js
+2nd way-
+create a folder redux for everything related to redux
