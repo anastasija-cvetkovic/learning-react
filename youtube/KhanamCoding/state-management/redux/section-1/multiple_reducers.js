@@ -41,6 +41,12 @@ const reducerBurger = (state = initialStateBurger, action) => {
         ...state,
         burgerBuns: state.burgerBuns - 1,
       };
+    //restaurant added a special offer: buy one  get two: order a pizza, get a burger for free!
+    case ORDER_PIZZA:
+      return {
+        ...state,
+        burgerBuns: state.burgerBuns - 1,
+      };
     default:
       return state;
   }

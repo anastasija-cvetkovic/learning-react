@@ -26,7 +26,7 @@ export const fetchProducts = () => {
     axios
       .get("https://fakestoreapi.com/products")
       .then((res) => {
-        const products = res.data.map((product) => product.title);
+        const products = res.data;
         console.log(products);
         dispatch(fetchSuccess(products));
       })
